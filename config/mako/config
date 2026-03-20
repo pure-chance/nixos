@@ -1,0 +1,36 @@
+# Mako notification daemon — Mellow
+
+sort=-time
+layer=overlay
+anchor=top-right
+margin=10
+padding=12
+border-size=2
+border-radius=4
+icons=1
+icon-size=20
+max-icon-size=20
+default-timeout=5000
+ignore-timeout=0
+max-visible=5
+font=JetBrainsMono Nerd Font 11
+
+background-color=#1a1a1a
+text-color=#c9c7cd
+border-color=#7e9cd8
+progress-color=over #252525
+
+[urgency=low]
+background-color=#1a1a1a
+text-color=#6b6970
+border-color=#2e2e2e
+
+[urgency=normal]
+background-color=#1a1a1a
+text-color=#c9c7cd
+border-color=#7e9cd8
+
+[urgency=high]
+background-color=#1a1a1a
+text-color=#e06c75
+border-color=#e06c75

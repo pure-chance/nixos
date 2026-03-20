@@ -1,45 +1,53 @@
 { pkgs, ... }:
 
 {
-  # Bootloader
+  # ── Boot ───────────────────────────────────────────────────────────────────
   boot.loader.systemd-boot.enable      = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Networking
+  # ── Networking ─────────────────────────────────────────────────────────────
   networking.networkmanager.enable = true;
 
-  # Locale / time
-  time.timeZone               = "America/Los_Angeles"; # adjust as needed
-  i18n.defaultLocale          = "en_US.UTF-8";
+  # ── Locale / time ──────────────────────────────────────────────────────────
+  time.timeZone      = "America/Los_Angeles";
+  i18n.defaultLocale = "en_US.UTF-8";
 
+  # ── SSH ────────────────────────────────────────────────────────────────────
   services.openssh = {
-    enable = true;
-    settings.PasswordAuthentication = true;
+    enable                          = true;
+    settings.PasswordAuthentication = false;
+    settings.PermitRootLogin        = "no";
   };
-  
-  # Sound via pipewire
-  services.pulseaudio.enable  = false;
-  security.rtkit.enable       = true;
-  # services.pipewire = {
+
+  # ── Sound (PipeWire) ───────────────────────────────────────────────────────
+  services.pulseaudio.enable = false;
+  security.rtkit.enable      = true;
+  services.pipewire = {
     enable            = true;
     alsa.enable       = true;
     alsa.support32Bit = true;
     pulse.enable      = true;
   };
 
-  # Basic system packages
+  # ── Graphics ───────────────────────────────────────────────────────────────
+  hardware.graphics.enable = true;
+
+  # ── DBus / Polkit ──────────────────────────────────────────────────────────
+  services.dbus.enable   = true;
+  security.polkit.enable = true;
+
+  # ── Base system packages ───────────────────────────────────────────────────
   environment.systemPackages = with pkgs; [
     git
     curl
     wget
-    ripgrep
-    fd
+    wl-clipboard   # wl-copy / wl-paste — needed by many CLI tools
+    brightnessctl  # screen brightness control
+    playerctl      # media key support
   ];
 
-  # Allow unfree (Ghostty needs this on some builds)
+  # ── Nix ────────────────────────────────────────────────────────────────────
   nixpkgs.config.allowUnfree = true;
-
-  # Nix settings
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     auto-optimise-store   = true;

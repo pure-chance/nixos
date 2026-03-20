@@ -1,20 +1,24 @@
+# ── Ghostty terminal — Linux configuration ────────────────────────────────────
+
 theme = Mellow
 
-# icon
-macos-icon = paper
+font-family = JetBrainsMono Nerd Font
+font-size = 14
 
-# configuration
-font-family = "Maple Mono NF"
-font-size = 16
 cursor-style = bar
-macos-titlebar-style = "hidden"
+cursor-style-blink = false
+
 window-padding-x = 10
 window-padding-y = 10
 
-# translucent
+shell-integration = detect
+shell-integration-features = cursor,sudo,title
+
+# Open new windows/tabs in the same working directory
+window-inherit-working-directory = true
+
+# Slightly translucent — comment out if compositor doesn't support it
 # background-opacity = 0.95
-# background-blur-radius = 20
 
-# keybinds
-keybind = super+backspace=text:\x15
-
+# keybinds (super+backspace clears whole line)
+keybind = ctrl+shift+backspace=text:\x15

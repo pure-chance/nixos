@@ -1,0 +1,149 @@
+/* ── Mellow palette ─────────────────────────────────────────────────────────── */
+/* bg        #1a1a1a   surface   #252525   overlay   #2e2e2e                    */
+/* subtle    #6b6970   text      #c9c7cd   bright    #e8e6eb                    */
+/* red       #e06c75   green     #a3be8c   yellow    #ebcb8b                    */
+/* blue      #7e9cd8   purple    #b48ead   cyan      #88c0d0                    */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    font-weight: 500;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ── Bar window ─────────────────────────────────────────────────────────────── */
+window#waybar {
+    background: transparent;
+    color: #c9c7cd;
+}
+
+/* ── Module containers — transparent ───────────────────────────────────────── */
+.modules-left,
+.modules-center,
+.modules-right {
+    background: transparent;
+}
+
+/* ── Shared pill base ───────────────────────────────────────────────────────── */
+#workspaces,
+#clock,
+#network,
+#bluetooth,
+#pulseaudio,
+#battery {
+    background: #1a1a1a;
+    color: #c9c7cd;
+    padding: 0 12px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+/* ── Workspaces pill (standalone, far left) ─────────────────────────────────── */
+#workspaces {
+    border-radius: 4px;
+    padding: 0 6px;
+}
+
+#workspaces button {
+    background: transparent;
+    color: #6b6970;
+    border-radius: 3px;
+    padding: 0 6px;
+    min-width: 0;
+    font-size: 11px;
+    transition: color 0.1s ease;
+}
+
+#workspaces button:hover {
+    background: #2e2e2e;
+    color: #c9c7cd;
+}
+
+#workspaces button.active {
+    color: #7e9cd8;
+}
+
+#workspaces button.urgent {
+    color: #e06c75;
+}
+
+/* ── System pill (network + bluetooth + pulseaudio + battery grouped) ────────── */
+/* First in group */
+#network {
+    border-radius: 4px 0 0 4px;
+    margin-left: 4px;
+    margin-right: 0;
+    color: #a3be8c;
+}
+
+#network.disconnected {
+    color: #6b6970;
+}
+
+/* Middle */
+#bluetooth {
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
+    color: #7e9cd8;
+    padding: 0 10px;
+}
+
+#bluetooth.disabled {
+    color: #6b6970;
+}
+
+#pulseaudio {
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
+    color: #7e9cd8;
+}
+
+#pulseaudio.muted {
+    color: #6b6970;
+}
+
+/* Last in group */
+#battery {
+    border-radius: 0 4px 4px 0;
+    margin-left: 0;
+    margin-right: 4px;
+    color: #a3be8c;
+}
+
+#battery.warning {
+    color: #ebcb8b;
+}
+
+#battery.critical {
+    color: #e06c75;
+}
+
+#battery.critical:not(.charging) {
+    animation: blink 1s step-start infinite;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #a3be8c;
+}
+
+@keyframes blink {
+    50% {
+        color: #2e2e2e;
+    }
+}
+
+/* ── Clock pill (standalone, far right) ─────────────────────────────────────── */
+#clock {
+    border-radius: 4px;
+    margin-left: 4px;
+    font-weight: 600;
+    color: #c9c7cd;
+}

@@ -1,0 +1,26 @@
+# ── Zed runtime databases (generated at runtime, not config) ──────────────────
+config/zed/embeddings/
+config/zed/prompts/
+config/zed/conversations/
+config/zed/debug.json
+config/zed/settings_backup.json
+
+# ── Nushell runtime files ─────────────────────────────────────────────────────
+config/nushell/history.sqlite3
+config/nushell/history.txt
+config/nushell/history.txt.bak
+config/nushell/plugin.msgpackz
+
+# ── Typst cache ───────────────────────────────────────────────────────────────
+config/typst/
+
+# ── jj repo-specific overrides (not global config) ───────────────────────────
+config/jj/repos/
+
+# ── macOS metadata ────────────────────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
+
+# ── Nix build results ─────────────────────────────────────────────────────────
+result
+result-*
