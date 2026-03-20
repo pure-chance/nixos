@@ -1,0 +1,11 @@
+[package]
+name = "ao3"
+version = "0.2.0"
+entrypoint = "src/lib.typ"
+authors = ["Approximately Equal"]
+license = "MIT"
+description = "A template for transcribing ao3 works"
+
+[template]
+path = "template"
+entrypoint = "main.typ"

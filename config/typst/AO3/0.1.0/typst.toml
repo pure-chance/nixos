@@ -1,0 +1,12 @@
+[package]
+name = "ao3"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Approximately Equal"]
+license = "MIT"
+description = "A simple template for writing math and the like. Based on ilm & ctheorems."
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+# thumbnail = "thumbnail.png"

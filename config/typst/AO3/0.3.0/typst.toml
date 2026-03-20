@@ -1,0 +1,11 @@
+[package]
+name = "AO3"
+version = "0.3.0"
+entrypoint = "src/lib.typ"
+authors = ["Chance Addis"]
+license = "MIT"
+description = "A template for AO3 works"
+
+[template]
+path = "template"
+entrypoint = "main.typ"

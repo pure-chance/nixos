@@ -1,0 +1,41 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  // CORE --
+  // "helix_mode": true,
+  "base_keymap": "VSCode",
+  "theme": "Catppuccin Mocha",
+  "icon_theme": "Catppuccin Mocha",
+  "buffer_font_family": "Maple Mono NF",
+  "ui_font_size": 15,
+  "buffer_font_size": 15,
+  "preferred_line_length": 80,
+  "soft_wrap": "preferred_line_length",
+  "terminal": {
+    "line_height": "standard"
+  },
+  // AI --
+  "agent": {
+    "always_allow_tool_actions": true,
+    "version": "2"
+  },
+  // LANGUAGES --
+  "languages": {
+    "Rust": {
+      "preferred_line_length": 100
+    },
+    "Zig": {
+      "preferred_line_length": 100
+    },
+    "HTML": {
+      "preferred_line_length": 100,
+      "tab_size": 2
+    }
+  }
+}

@@ -1,0 +1,20 @@
+theme = Mellow
+
+# icon
+macos-icon = paper
+
+# configuration
+font-family = "Maple Mono NF"
+font-size = 16
+cursor-style = bar
+macos-titlebar-style = "hidden"
+window-padding-x = 10
+window-padding-y = 10
+
+# translucent
+# background-opacity = 0.95
+# background-blur-radius = 20
+
+# keybinds
+keybind = super+backspace=text:\x15
+

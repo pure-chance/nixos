@@ -1,0 +1,12 @@
+[package]
+name = "pure-paper"
+version = "0.1.0"
+entrypoint = "src/lib.typ"
+authors = ["The Typst Project Developers"]
+license = "MIT"
+description = "An aesthetic paper format for pure-chance."
+categories = ["paper"]
+
+[template]
+path = "template"
+entrypoint = "paper.typ"

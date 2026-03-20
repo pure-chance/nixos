@@ -1,0 +1,55 @@
+ui.background = { fg = "text", bg = "base" }
+"ui.window" = { bg = "crust" }
+
+"ui.selection" = { bg = "surface" }
+
+"ui.linenr" = { modifiers = ["dim"] }
+"ui.linenr.selected" = { fg = "purple" }
+
+"ui.statusline" = { fg = "subtext", bg = "mantle" }
+"ui.statusline.inactive" = { fg = "surface", bg = "mantle" }
+"ui.statusline.normal" = { fg = "base", bg = "orange", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "base", bg = "green", modifiers = ["bold"]  }
+"ui.statusline.select" = { fg = "base", bg = "purple", modifiers = ["bold"]  }
+
+"ui.virtual.whitespace" = { modifiers = ["dim"] }
+"ui.virtual.indent-guide" = { modifiers = ["dim"] }
+"ui.virtual.ruler" = { modifiers = ["dim"] }
+
+"ui.cursor" = { fg = "base", bg = "bg_ui" }
+"ui.cursor.primary" = { fg = "base", bg = "orange" }
+"ui.cursor.match" = { fg = "orange", modifiers = ["bold"] }
+
+"ui.cursor.primary.normal" = { fg = "base", bg = "orange" }
+"ui.cursor.primary.insert" = { fg = "base", bg = "green" }
+"ui.cursor.primary.select" = { fg = "base", bg = "purle" }
+
+"ui.highlight" = { bg = "surface", modifiers = ["bold"] }
+
+# Syntax highlighting --
+punctuation = { modifiers = ["dim"] }
+
+variable = { modifiers = ["italic"] }
+
+string = { fg = "purple" }
+constant = { fg = "purple" }
+comment = { fg = "green", modifiers = ["italic"] }
+
+"diff.plus" = "green" # + add
+"diff.minus" = "red" # - delete
+"diff.delta" = "yellow" # ± edit
+
+[palette]
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+surface = "#313244"
+subtext = "#bac2de"
+text = "#fbfaf5"
+
+red = "#d99ca6"
+orange = "#d9b29c"
+yellow = "#d9d09c"
+green = "#9cd9b1"
+blue = "#9cc5d9"
+purple = "#b19cd9"

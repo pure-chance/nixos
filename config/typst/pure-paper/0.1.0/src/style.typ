@@ -1,0 +1,79 @@
+#import "packages/theoretic.typ": *
+#import "packages/zebraw.typ": *
+
+#let stylize() = contents => {
+  // Configure page properties --
+  set page(
+    columns: 2,
+    paper: "a4",
+    margin: (x: 1.25cm, y: 1.25cm)
+  )
+  set columns(gutter: 0.5cm)
+
+  // Configure text properties --
+  set text(font: "Libertinus Serif", size: 10pt, weight: "regular")
+  show raw: set text(font: "Maple Mono NF", size: 7pt)
+
+  // Configure paragraph properties --
+  set par(
+    spacing: 0.45em,
+    justify: true,
+    first-line-indent: 1em,
+    leading: 0.45em
+  )
+
+  // Configure heading properties --
+  set heading(numbering: "1.1.")
+  show heading: set text(size: 11pt)
+  show heading: it => {
+    if it.level <= 1 {
+      it
+    } else {
+      // inline heading
+      let heading = counter(heading).display(it.numbering) + h(0.2em) + it.body
+      block(below: 0pt) + heading + [.]
+    }
+  }
+
+  show heading.where(level: 1): set text(
+    size: 13pt,
+    style: "normal",
+    weight: "bold"
+  )
+  show heading.where(level: 2): set text(
+    size: 10pt,
+    style: "normal",
+    weight: "bold"
+  )
+  show heading: it => {
+    if it.level >= 3 {
+      set text(size: 10pt, style: "italic", weight: "regular")
+      it
+    } else {
+      it // passthrough
+    }
+  }
+
+  // Configure figures & captions --
+  show figure: set block(breakable: true)
+  show figure: set figure(supplement: "Fig.")
+  show figure.caption: set align(left)
+  set figure.caption(separator: [|])
+  show figure.caption: it => [
+    #strong[
+      #it.supplement
+      #context it.counter.display(it.numbering)
+      #it.separator
+    ]
+    #it.body
+  ]
+
+  // math
+  set math.equation(numbering: "(1)")
+
+  // packages --
+  show ref: theoretic.show-ref
+  show: zebraw.with(indentation: 4)
+
+  contents
+}

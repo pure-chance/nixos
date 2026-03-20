@@ -1,0 +1,65 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "git": {
+    "blame": {
+      "show_avatar": true,
+    },
+  },
+  "helix_mode": true,
+  "base_keymap": "Cursor",
+  "theme": "Mellow",
+  "icon_theme": "Catppuccin Mocha",
+  "buffer_font_family": "Maple Mono NF",
+  "ui_font_size": 15.0,
+  "buffer_font_size": 15.0,
+  "preferred_line_length": 100,
+  "cursor_blink": false,
+  "soft_wrap": "preferred_line_length",
+  "terminal": {
+    "line_height": "standard",
+  },
+
+  "agent": {
+    "tool_permissions": {
+      "tools": {
+        "terminal": {
+          "default": "allow",
+        },
+      },
+    },
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-opus-4-6",
+    },
+    "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-6",
+    },
+    "default_profile": "write",
+    "model_parameters": [],
+  },
+
+  "languages": {
+    "Typst": {
+      "preferred_line_length": 80,
+    },
+    "Zig": {
+      "preferred_line_length": 100,
+    },
+    "Julia": {
+      "preferred_line_length": 92,
+    },
+    "HTML": {
+      "preferred_line_length": 100,
+    },
+  },
+}

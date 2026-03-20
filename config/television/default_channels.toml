@@ -1,0 +1,42 @@
+# JJ
+[[cable_channel]]
+name = "jj-diff"
+source_command = "jj diff --name-only"
+preview_command = "jj diff file {0} --color=always"
+
+[[cable_channel]]
+name = "jj-log"
+source_command = "jj log --no-graph -T oneline"
+preview_command = "jj show {0} --stat --color=always"
+
+# GIT
+# [[cable_channel]]
+# name = "git-diff"
+# source_command = "git diff --name-only"
+# preview_command = "git diff --color=always {0}"
+
+# [[cable_channel]]
+# name = "git-reflog"
+# source_command = 'git reflog'
+# preview_command = 'git show -p --stat --pretty=fuller --color=always {0}'
+
+# [[cable_channel]]
+# name = "git-log"
+# source_command = "git log --oneline --date=short --pretty=\"format:%h %s %an %cd\" \"$@\""
+# preview_command = "git show -p --stat --pretty=fuller --color=always {0}"
+
+# [[cable_channel]]
+# name = "git-branch"
+# source_command = "git --no-pager branch --all --format=\"%(refname:short)\""
+# preview_command = "git show -p --stat --pretty=fuller --color=always {0}"
+
+# Dotfiles
+[[cable_channel]]
+name = "dotfiles"
+source_command = "fd -t f . $HOME/.config"
+preview_command = ":files:"
+
+# Shell history
+[[cable_channel]]
+name = "nu-history"
+source_command = "history"

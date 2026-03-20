@@ -1,0 +1,11 @@
+# base theme = catppucchin mocha
+inherits = "catppuccin_mocha"
+
+# transparent elements
+"ui.background" = { bg = "" }
+"ui.statusline" = { bg = "" }
+"ui.bufferline" = { bg = "" }
+"ui.text.focus" = { bg = "" }
+"ui.cursorline.primary" = { bg = ""}
+"ui.bufferline.active" = { fg = "base", bg = "blue" }
+"ui.bufferline.background" = ""

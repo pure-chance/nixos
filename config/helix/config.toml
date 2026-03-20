@@ -1,0 +1,57 @@
+theme = "mellow"
+
+[editor]
+color-modes = true
+end-of-line-diagnostics = "hint"
+line-number = "relative"
+mouse = false
+rulers = [80]
+true-color = true
+text-width = 80
+
+[editor.lsp]
+# display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+character = "╎"
+skip-levels = 1
+
+[editor.soft-wrap]
+enable = true
+wrap-at-text-width = true
+wrap-indicator = ""
+
+[keys.normal."+"]
+m = ":sh make"
+b = ":sh cargo build"
+r = ":sh cargo run"
+t = ":sh cargo test"
+w = ":sh typst watch %{buffer_name} --open"
+
+[keys.normal]
+# add navigation layer 
+C-A-f = "move_char_left"
+C-A-n = "move_visual_line_down"
+C-A-e = "move_visual_line_up"
+C-A-i = "move_char_right"
+# unselect line (go back up a line)
+X = ["extend_line_up", "extend_to_line_bounds"]
+# delete without yanking
+D = "delete_selection_noyank"
+
+[keys.insert]
+# disable arrow navigation
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+home = "no_op"
+end = "no_op"

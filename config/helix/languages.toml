@@ -1,0 +1,59 @@
+# rust --
+[[language]]
+name = "rust"
+text-width = 100
+rulers = [100]
+
+# julia --
+[[language]]
+name = "julia"
+auto-format = false
+
+[language-server.julia-lsp]
+command = "julia"
+timeout = 60
+args = [
+    "--startup-file=no",
+    "--history-file=no",
+    "--quiet",
+    "--project=@lsp",
+    "-e",
+    "using LanguageServer; runserver()",
+    ]
+
+[language.formatter]
+command = "julia"
+args = ["--project=@runic", "--startup-file=no", "-e", "using Runic; exit(Runic.main(ARGS))"] 
+
+# typst --
+[[language]]
+name = "typst"
+auto-format = true
+formatter = { command = "typstyle", args = ["--output", "-"] }
+language-servers = ["tinymist"]
+
+[language-server.tinymist.config.exportPdf]
+onSave = true
+
+[language-server.tinymist]
+command = "typst"
+args = ["watch", "--open", "%f"]
+on-save = true
+
+# harper LSP --
+[language-server.harper-ls]
+command = "harper-ls"
+args = ["--stdio"]
+
+# zig --
+[[language]]
+name = "zig"
+text-width = 100
+rulers = [100]
+
+# rust --
+[[language]]
+name = "html"
+text-width = 100
+rulers = [100]
+
